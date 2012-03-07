@@ -1,0 +1,21 @@
+[user]
+	name = Tom Hudson
+	email = mail@tomnomnom.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[alias]
+	st = status
+    ci = commit
+    co = checkout
+    tm = merge --no-ff --no-commit
+    rm-untracked = !rm $(git ls-files --other --exclude-standard)
+[core]
+	editor = /usr/bin/vim
+	mergeoptions = 
+[push]
+	default = current
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 1269x839+117+89
