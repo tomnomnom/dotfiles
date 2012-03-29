@@ -132,3 +132,5 @@ set showbreak=▹
 
 map <F5> <Esc>:GundoToggle<CR>
 
+map <Leader>p :!phpunit<CR>
+map <Leader>l :!php -l %<CR>
