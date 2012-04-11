@@ -7,3 +7,6 @@
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "vim/bundle/vimux"]
+	path = vim/bundle/vimux
+	url = https://github.com/benmills/vimux.git
