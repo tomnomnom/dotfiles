@@ -14,6 +14,7 @@ Bundle 'benmills/vimux'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
+Bundle 'TomNomNom/xoria256.vim'
 
 " Required for vundle
 filetype plugin indent on 
