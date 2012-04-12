@@ -1,5 +1,25 @@
-" Pathogen
-call pathogen#runtime_append_all_bundles() 
+" Vundle
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle' 
+
+" Bundles
+Bundle 'tpope/vim-fugitive'
+Bundle 'sjl/gundo.vim'
+Bundle 'msanders/snipmate.vim'
+Bundle 'godlygeek/tabular'
+Bundle 'benmills/vimux'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'scrooloose/nerdtree'
+
+" Required for vundle
+filetype plugin indent on 
+
 
 " Syntax highlighting, go!
 syntax on
