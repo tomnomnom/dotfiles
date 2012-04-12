@@ -1,8 +1,22 @@
 #!/bin/bash
-if [ ! -e ~/.vim ]; then ln -s ~/etc/vim ~/.vim; fi;
-if [ ! -e ~/.vimrc ]; then ln -s ~/etc/vimrc ~/.vimrc; fi;
-if [ ! -e ~/.ackrc ]; then ln -s ~/etc/ackrc ~/.ackrc; fi;
-if [ ! -e ~/.bashrc ]; then ln -s ~/etc/bashrc ~/.bashrc; fi;
-if [ ! -e ~/.gitconfig ]; then ln -s ~/etc/gitconfig ~/.gitconfig; fi;
-if [ ! -e ~/.tmux.conf ]; then ln -s ~/etc/tmux.conf ~/.tmux.conf; fi;
+dotfilesDir=$(pwd)
+
+function linkDotfile {
+  if [ -e ~/${1} ]; then
+    mv ~/${1}{,.bak}
+  fi
+
+  if [ -L ~/${1} ]; then
+    unlink ~/${1}
+  fi
+
+  ln -s ${dotfilesDir}/${1} ~/${1}
+}
+
+linkDotfile .vim
+linkDotfile .vimrc
+linkDotfile .ackrc
+linkDotfile .bashrc
+linkDotfile .gitconfig
+linkDotfile .tmux.conf
 
