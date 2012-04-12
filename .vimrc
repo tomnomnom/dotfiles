@@ -5,8 +5,6 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle' 
-
 " Bundles
 Bundle 'tpope/vim-fugitive'
 Bundle 'sjl/gundo.vim'
@@ -19,7 +17,6 @@ Bundle 'scrooloose/nerdtree'
 
 " Required for vundle
 filetype plugin indent on 
-
 
 " Syntax highlighting, go!
 syntax on
@@ -57,9 +54,6 @@ set backspace=eol,start,indent
 
 " Give me a ruler
 set ruler
-
-" Don't try to be compatible with vi
-set nocompatible
 
 " Two spaces for a tab
 set shiftwidth=2
@@ -140,8 +134,6 @@ map <F7> :source $MYVIMRC<CR>
 
 " Snips
 imap <C-l>p <Esc>!!which php<CR>I#!<Esc>o<?php<CR>
-
-filetype plugin on
 
 command! W w !sudo tee % > /dev/null
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
