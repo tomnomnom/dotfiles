@@ -2,7 +2,7 @@
 dotfilesDir=$(pwd)
 
 function linkDotfile {
-  if [ -e ~/${1} ]; then
+  if [ -f ~/${1} ]; then
     mv ~/${1}{,.bak}
   fi
 
