@@ -48,6 +48,7 @@ txtrst='\[\e[0m\]'    # Text Reset
 
 export TERM=xterm-256color
 
+# Red prompt for root
 case $UID in 
 0)
   export PS1="${txtred}\u@\h:${txtgrn}\w${txtpur}\$(__git_ps1)${txtgrn}▶${txtwht} "
@@ -57,5 +58,30 @@ case $UID in
   ;;
 esac
 
+# Open all modified files in vim tabs
 alias vimod="vim -p \`git status -suall | awk '{print \$2}'\`"
 
+# Open files modified in a git commit in vim tabs; defaults to HEAD. Pop it in your .bashrc
+# Examples: 
+#     virev 49808d5
+#     virev HEAD~3
+function virev {
+    commit=$1
+    if [ -z "${commit}" ]; then
+      commit="HEAD"
+    fi
+    rootdir=$(git rev-parse --show-toplevel)
+    sourceFiles=$(git show --name-only --pretty="format:" ${commit} | grep -v '^$')
+    toOpen=""
+    for file in ${sourceFiles}; do
+      file="${rootdir}/${file}"
+      if [ -e "${file}" ]; then
+        toOpen="${toOpen} ${file}"
+      fi
+    done
+    if [ -z "${toOpen}" ]; then
+      echo "No files were modified in ${commit}"
+      return 1
+    fi
+    vim -p ${toOpen}
+}
