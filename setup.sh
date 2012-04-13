@@ -6,6 +6,10 @@ function linkDotfile {
     mv ~/${1}{,.bak}
   fi
 
+  if [ -d ~/${1} ]; then
+    mv ~/${1}{,.bak}
+  fi
+
   if [ -L ~/${1} ]; then
     unlink ~/${1}
   fi
