@@ -105,13 +105,13 @@ function gitRepoFlags {
 }
 
 function gitPrompt {
-  __git_ps1 "(%s$(gitRepoFlags))"
+  __git_ps1 " (%s$(gitRepoFlags))"
 }
 
 # Red prompt for root
 case $UID in 
 0)
-  export PS1="${txtred}\u@\h:${txtgrn}\w${txtpur}\$(__git_ps1)${txtgrn}▶${txtwht} "
+  export PS1="${txtred}\u@\h:${txtgrn}\w${txtpur}\$(gitPrompt)${txtgrn}▶${txtwht} "
   ;;
 *)
   export PS1="${txtpur}\u@\h:${txtgrn}\w${txtpur}\$(gitPrompt)${txtgrn}▶${txtwht} "
