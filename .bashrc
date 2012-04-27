@@ -6,6 +6,7 @@ HISTFILESIZE=2000
 shopt -s histappend
 
 alias grep='grep --color=auto'
+alias gg='git grep -ni'
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
@@ -83,8 +84,10 @@ function gitRepoFlags {
     return 1
   fi
 
-  untracked=$(git ls-files --other --exclude-standard | wc | awk '{print $1}' 2> /dev/null)
-  modified=$(git ls-files --modified | wc | awk '{print $1}' 2> /dev/null)
+  rootDir=$(git rev-parse --show-toplevel)
+
+  untracked=$(git ls-files --other --exclude-standard ${rootDir} | wc | awk '{print $1}' 2> /dev/null)
+  modified=$(git ls-files --modified ${rootDir} | wc | awk '{print $1}' 2> /dev/null)
   staged=$(git diff --name-only --staged | wc | awk '{print $1}' 2> /dev/null)
 
   str=""
