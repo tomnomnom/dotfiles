@@ -18,7 +18,8 @@ Bundle 'TomNomNom/xoria256.vim'
 Bundle 'tomasr/molokai'
 
 " Required for vundle
-filetype plugin indent on 
+"filetype plugin indent on 
+filetype plugin on 
 
 " Highlighting
 syntax on
@@ -100,7 +101,8 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
 " Write current file with sudo perms
-command! W w !sudo tee % > /dev/null
+"command! W w !sudo tee % > /dev/null
+command! W w
 
 " Open word under cursor as ctag in new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
