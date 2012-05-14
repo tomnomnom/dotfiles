@@ -6,6 +6,7 @@ HISTFILESIZE=2000
 shopt -s histappend
 
 alias grep='grep --color=auto'
+alias gg='git grep -ni'
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
@@ -48,15 +49,6 @@ txtrst='\[\e[0m\]'    # Text Reset
 
 export TERM=xterm-256color
 
-# Red prompt for root
-case $UID in 
-0)
-  export PS1="${txtred}\u@\h:${txtgrn}\w${txtpur}\$(__git_ps1)${txtgrn}▶${txtwht} "
-  ;;
-*)
-  export PS1="${txtpur}\u@\h:${txtgrn}\w${txtpur}\$(__git_ps1)${txtgrn}▶${txtwht} "
-  ;;
-esac
 
 # Open all modified files in vim tabs
 alias vimod="vim -p \`git status -suall | awk '{print \$2}'\`"
@@ -85,3 +77,46 @@ function virev {
     fi
     vim -p ${toOpen}
 }
+
+function gitRepoFlags {
+  branch=$(__git_ps1)
+  if [ -z "${branch}" ]; then
+    return 1
+  fi
+
+  rootDir=$(git rev-parse --show-toplevel)
+
+  untracked=$(git ls-files --other --exclude-standard ${rootDir} | wc | awk '{print $1}' 2> /dev/null)
+  modified=$(git ls-files --modified ${rootDir} | wc | awk '{print $1}' 2> /dev/null)
+  staged=$(git diff --name-only --staged | wc | awk '{print $1}' 2> /dev/null)
+
+  str=""
+
+  if [ "${staged}" != "0" ]; then 
+    str="${str}ˢ"
+  fi
+
+  if [ "${untracked}" != "0" ]; then 
+    str="${str}ᵘ"
+  fi
+
+  if [ "${modified}" != "0" ]; then 
+    str="${str}ᵐ"
+  fi
+
+  echo -n "${str}"
+}
+
+function gitPrompt {
+  __git_ps1 " (%s$(gitRepoFlags))"
+}
+
+# Red prompt for root
+case $UID in 
+0)
+  export PS1="${txtred}\u@\h:${txtgrn}\w${txtpur}\$(gitPrompt)${txtgrn}▶${txtwht} "
+  ;;
+*)
+  export PS1="${txtpur}\u@\h:${txtgrn}\w${txtpur}\$(gitPrompt)${txtgrn}▶${txtwht} "
+  ;;
+esac
