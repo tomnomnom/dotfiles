@@ -109,7 +109,7 @@ function gitRepoFlags {
 }
 
 function gitPrompt {
-  __git_ps1 " (%s$(gitRepoFlags))"
+  command -v __git_ps1 > /dev/null && __git_ps1 " (%s$(gitRepoFlags))"
 }
 
 # Red prompt for root
