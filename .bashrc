@@ -49,6 +49,7 @@ bakwht='\[\e[47m\]'   # White
 txtrst='\[\e[0m\]'    # Text Reset
 
 export TERM=xterm-256color
+export EDITOR=/usr/bin/vim
 
 
 # Open all modified files in vim tabs
