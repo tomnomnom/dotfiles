@@ -110,15 +110,27 @@ function gitRepoFlags {
 }
 
 function gitPrompt {
-  __git_ps1 " (%s$(gitRepoFlags))"
+  command -v __git_ps1 > /dev/null && __git_ps1 " (%s$(gitRepoFlags))"
 }
 
-# Red prompt for root
-case $UID in 
-0)
-  export PS1="${txtred}\u@\h:${txtgrn}\w${txtpur}\$(gitPrompt)${txtgrn}▶${txtwht} "
-  ;;
-*)
-  export PS1="${txtpur}\u@\h:${txtgrn}\w${txtpur}\$(gitPrompt)${txtgrn}▶${txtwht} "
-  ;;
-esac
+atC="${txtpur}"
+nameC="${txtpur}"
+hostC="${txtpur}"
+pathC="${txtgrn}"
+gitC="${txtpur}"
+pointerC="${txtgrn}"
+normalC="${txtwht}"
+
+# Red name for root
+if [ "${UID}" -eq "0" ]; then 
+  nameC="${txtred}" 
+fi
+
+# Blue for gue hosts
+if [ `hostname | cut -b1-3` == "gue" ]; then
+  nameC="${txtblu}"
+  atC="${txtblu}"
+  hostC="${txtblu}"
+fi
+
+export PS1="${nameC}\u${atC}@${hostC}\h:${pathC}\w${gitC}\$(gitPrompt)${pointerC}▶${normalC} "
