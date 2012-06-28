@@ -8,6 +8,7 @@ shopt -s histappend
 alias grep='grep --color=auto'
 alias gg='git grep -ni'
 alias phpunit='phpunit --colors'
+alias vimpress="VIMENV=talk vim"
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
