@@ -113,4 +113,8 @@ if $VIMENV == 'talk'
   set background=light
   let g:solarized_termcolors=256
   colo solarized
+  noremap <Space> :n<CR>
+  noremap <Backspace> :N<CR>
 endif
+
+set noesckeys
