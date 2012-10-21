@@ -1,5 +1,4 @@
 " Vundle
-set nocompatible
 filetype off
 
 let g:vundle_default_git_proto = 'git'
@@ -118,3 +117,5 @@ if $VIMENV == 'talk'
 endif
 
 set noesckeys
+
+set nocompatible

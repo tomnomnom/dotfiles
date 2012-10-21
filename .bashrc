@@ -135,3 +135,8 @@ if [ `hostname | cut -b1-3` == "gue" ]; then
 fi
 
 export PS1="${nameC}\u${atC}@${hostC}\h:${pathC}\w${gitC}\$(gitPrompt)${pointerC}▶${normalC} "
+
+# Local settings
+if [ -f ~/.localrc ]; then 
+  source ~/.localrc
+fi
