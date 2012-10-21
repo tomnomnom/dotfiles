@@ -23,6 +23,7 @@ linkDotfile .ackrc
 linkDotfile .bashrc
 linkDotfile .gitconfig
 linkDotfile .tmux.conf
+linkDotfile .goomwwmrc
 
 
 echo "Remember to 'git submodule init' and 'git submodule update'"
