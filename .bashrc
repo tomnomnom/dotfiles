@@ -56,6 +56,9 @@ export EDITOR=/usr/bin/vim
 # Open all modified files in vim tabs
 alias vimod="vim -p \`git status -suall | awk '{print \$2}'\`"
 
+# Switch to git root dir
+alias gr="cd \$(git rev-parse --show-toplevel)"
+
 # Open files modified in a git commit in vim tabs; defaults to HEAD. Pop it in your .bashrc
 # Examples: 
 #     virev 49808d5
