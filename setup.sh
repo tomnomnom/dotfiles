@@ -2,19 +2,27 @@
 dotfilesDir=$(pwd)
 
 function linkDotfile {
-  if [ -f ~/${1} ]; then
-    mv ~/${1}{,.bak}
+  dest="${HOME}/${1}"
+  dateStr=$(date +%Y-%m-%d-%H%M)
+
+  if [ -h ~/${1} ]; then
+    # Existing symlink 
+    echo "Removing existing symlink: ${dest}"
+    rm ${dest} 
+
+  elif [ -f "${dest}" ]; then
+    # Existing file
+    echo "Backing up existing file: ${dest}"
+    mv ${dest}{,.${dateStr}}
+
+  elif [ -d "${dest}" ]; then
+    # Existing dir
+    echo "Backing up existing dir: ${dest}"
+    mv ${dest}{,.${dateStr}}
   fi
 
-  if [ -d ~/${1} ]; then
-    mv ~/${1}{,.bak}
-  fi
-
-  if [ -L ~/${1} ]; then
-    unlink ~/${1}
-  fi
-
-  ln -s ${dotfilesDir}/${1} ~/${1}
+  echo "Creating new symlink: ${dest}"
+  ln -s ${dotfilesDir}/${1} ${dest}
 }
 
 linkDotfile .vim
@@ -24,6 +32,8 @@ linkDotfile .bashrc
 linkDotfile .gitconfig
 linkDotfile .tmux.conf
 linkDotfile .goomwwmrc
+linkDotfile .inputrc
 
-
-echo "Remember to 'git submodule init' and 'git submodule update'"
+# Update for vundle
+git submodule init
+git submodule update
