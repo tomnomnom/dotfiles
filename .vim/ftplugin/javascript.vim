@@ -1,0 +1,1 @@
+map <Leader>; :!node %<CR>
