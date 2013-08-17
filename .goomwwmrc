@@ -21,3 +21,11 @@ launcher dmenu_run -nb "#2C2C2C" -nf "#AAAAAA" -sb "#5C5C5C" -sf "#BBBBBB"
 
 # Auto-start xscreensaver
 auto xscreensaver -nosplash
+
+# Launchers
+1 terminator
+2 google-chrome
+3 xchat
+4 xclock
+9 lock
+
