@@ -17,6 +17,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'TomNomNom/xoria256.vim'
 Bundle 'tomasr/molokai'
 Bundle 'kien/ctrlp.vim'
+Bundle 'rking/ag.vim'
 
 " Required for vundle
 "filetype plugin indent on 
