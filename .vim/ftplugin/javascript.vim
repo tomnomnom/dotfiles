@@ -1,1 +1,1 @@
-map <Leader>; :!node %<CR>
+map <Leader>; :!nodejs %<CR>
