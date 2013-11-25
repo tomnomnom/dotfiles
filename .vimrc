@@ -120,3 +120,5 @@ endif
 set noesckeys
 
 set nocompatible
+
+set cryptmethod=blowfish
