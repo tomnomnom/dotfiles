@@ -18,6 +18,11 @@ Bundle 'TomNomNom/xoria256.vim'
 Bundle 'tomasr/molokai'
 Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
+Bundle 'jpalardy/vim-slime'
+
+" vim-slime config
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 
 " Required for vundle
 "filetype plugin indent on 
