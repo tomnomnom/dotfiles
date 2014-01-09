@@ -19,6 +19,8 @@ Bundle 'tomasr/molokai'
 Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
 Bundle 'jpalardy/vim-slime'
+Bundle 'neochrome/todo.vim'
+Bundle 'justinmk/vim-sneak'
 
 " vim-slime config
 let g:slime_target = "tmux"
@@ -127,3 +129,7 @@ set noesckeys
 set nocompatible
 
 set cryptmethod=blowfish
+
+" todo.vim
+let g:TodoExplicitCommentsEnabled = 1
+nmap <C-m> :TodoToggle<CR>
