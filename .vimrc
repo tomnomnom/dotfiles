@@ -8,7 +8,6 @@ call vundle#rc()
 " Bundles
 Bundle 'tpope/vim-fugitive'
 Bundle 'sjl/gundo.vim'
-Bundle 'msanders/snipmate.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'benmills/vimux'
 Bundle 'Lokaltog/vim-powerline'
@@ -21,6 +20,12 @@ Bundle 'rking/ag.vim'
 Bundle 'jpalardy/vim-slime'
 Bundle 'neochrome/todo.vim'
 Bundle 'justinmk/vim-sneak'
+
+" Snipmate + deps
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
 
 " vim-slime config
 let g:slime_target = "tmux"
