@@ -8,7 +8,6 @@ call vundle#rc()
 " Bundles
 Bundle 'tpope/vim-fugitive'
 Bundle 'sjl/gundo.vim'
-Bundle 'msanders/snipmate.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'benmills/vimux'
 Bundle 'Lokaltog/vim-powerline'
@@ -19,6 +18,14 @@ Bundle 'tomasr/molokai'
 Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
 Bundle 'jpalardy/vim-slime'
+Bundle 'neochrome/todo.vim'
+Bundle 'justinmk/vim-sneak'
+
+" Snipmate + deps
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
 
 " vim-slime config
 let g:slime_target = "tmux"
@@ -128,5 +135,10 @@ set nocompatible
 
 set cryptmethod=blowfish
 
+" todo.vim
+let g:TodoExplicitCommentsEnabled = 1
+nmap <C-m> :TodoToggle<CR>
+
 " Trans background
 hi Normal ctermfg=252 ctermbg=none
+

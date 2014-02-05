@@ -1,2 +1,2 @@
-map <Leader>; :!go run %<CR>
-map <Leader>f :!go fmt %<CR>
+map <Leader>; :!go run *.go<CR>
+map <Leader>f mp:%!gofmt -tabs=false -tabwidth=2<CR>`pzz
