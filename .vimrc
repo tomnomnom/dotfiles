@@ -127,6 +127,10 @@ if $VIMENV == 'talk'
   colo solarized
   noremap <Space> :n<CR>
   noremap <Backspace> :N<CR>
+else
+  " Trans background
+  hi Normal ctermbg=none
+  hi NonText ctermbg=none
 endif
 
 set noesckeys
@@ -139,6 +143,4 @@ set cryptmethod=blowfish
 let g:TodoExplicitCommentsEnabled = 1
 nmap <C-m> :TodoToggle<CR>
 
-" Trans background
-hi Normal ctermfg=252 ctermbg=none
 
