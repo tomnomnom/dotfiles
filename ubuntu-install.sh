@@ -12,6 +12,5 @@ function install {
 }
 
 install vim
-install git
 install ctags
 install tmux
