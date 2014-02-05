@@ -127,3 +127,6 @@ set noesckeys
 set nocompatible
 
 set cryptmethod=blowfish
+
+" Trans background
+hi Normal ctermfg=252 ctermbg=none
