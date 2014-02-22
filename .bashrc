@@ -162,4 +162,4 @@ if [ -f ~/.localrc ]; then
   source ~/.localrc
 fi
 
-export PATH=${PATH}:/home/tomh/bin:/home/tom/src/goomwwm
+export PATH=${PATH}:/home/tom/bin
