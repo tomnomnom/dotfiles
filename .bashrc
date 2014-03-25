@@ -12,6 +12,7 @@ alias vimpress="VIMENV=talk vim"
 alias c="composer"
 alias v="vagrant"
 alias node="nodejs"
+alias d="sudo docker"
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
