@@ -14,3 +14,7 @@ function install {
 install vim
 install ctags
 install tmux
+install dtach
+install dstat
+install nmap
+install silversearcher-ag
