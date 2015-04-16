@@ -9,17 +9,10 @@ call vundle#rc()
 Bundle 'tpope/vim-fugitive'
 Bundle 'sjl/gundo.vim'
 Bundle 'godlygeek/tabular'
-Bundle 'benmills/vimux'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
 Bundle 'TomNomNom/xoria256.vim'
-Bundle 'tomasr/molokai'
-Bundle 'kien/ctrlp.vim'
-Bundle 'rking/ag.vim'
-Bundle 'jpalardy/vim-slime'
-Bundle 'neochrome/todo.vim'
-Bundle 'justinmk/vim-sneak'
 
 " Snipmate + deps
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -136,8 +129,6 @@ endif
 set noesckeys
 
 set nocompatible
-
-set cryptmethod=blowfish
 
 " todo.vim
 let g:TodoExplicitCommentsEnabled = 1
