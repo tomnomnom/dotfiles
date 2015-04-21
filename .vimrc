@@ -13,6 +13,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
 Bundle 'TomNomNom/xoria256.vim'
+Bundle 'Blackrush/vim-gocode'
 
 " Snipmate + deps
 Bundle "MarcWeber/vim-addon-mw-utils"
