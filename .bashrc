@@ -164,3 +164,7 @@ if [ -f ~/.localrc ]; then
 fi
 
 export PATH=${PATH}:/home/tom/bin
+
+# Go
+export PATH=${PATH}:/usr/local/go/bin
+export GOPATH=/home/tom/
