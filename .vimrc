@@ -21,10 +21,6 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 
-" vim-slime config
-let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
-
 " Required for vundle
 "filetype plugin indent on 
 filetype plugin on 
@@ -130,9 +126,3 @@ endif
 set noesckeys
 
 set nocompatible
-
-" todo.vim
-let g:TodoExplicitCommentsEnabled = 1
-nmap <C-m> :TodoToggle<CR>
-
-
