@@ -168,3 +168,8 @@ export PATH=${PATH}:/home/tom/bin
 # Go
 export PATH=${PATH}:/usr/local/go/bin
 export GOPATH=/home/tom/
+
+# Ahhh! Aahhh! AHHHHHHYYAAAHHHHHHH!
+function ssj {
+  ssh $1 -t "PS1=\"\[\033[1;33m\][\u@\hSSJ1:\w]$ \"; exec bash --norc";
+}
