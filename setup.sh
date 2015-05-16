@@ -33,6 +33,7 @@ linkDotfile .gitconfig
 linkDotfile .tmux.conf
 linkDotfile .goomwwmrc
 linkDotfile .inputrc
+linkDotfile .xinitrc
 
 # Update for vundle
 git submodule init
