@@ -9,7 +9,7 @@ call vundle#rc()
 Bundle 'tpope/vim-fugitive'
 Bundle 'sjl/gundo.vim'
 Bundle 'godlygeek/tabular'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
 Bundle 'TomNomNom/xoria256.vim'
@@ -29,6 +29,8 @@ filetype plugin on
 syntax on
 
 set encoding=utf-8
+
+let g:airline_powerline_fonts = 1
 
 " History
 set history=50
