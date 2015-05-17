@@ -1,4 +1,4 @@
-map <Leader>; :!FN=%; rustc $FN && ./${FN:0:-3}<CR>
+map <Leader>; :!cargo run<CR>
 
 setlocal shiftwidth=4
 setlocal tabstop=4
