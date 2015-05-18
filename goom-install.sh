@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get install libx11-dev libxft-dev libxinerama-dev demenu
+sudo apt-get install libx11-dev libxft-dev libxinerama-dev dmenu
 
 pushd .
 mkdir -p ~/src/github.com/seanpringle
