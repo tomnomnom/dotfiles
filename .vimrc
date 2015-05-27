@@ -13,7 +13,7 @@ Bundle 'bling/vim-airline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
 Bundle 'TomNomNom/xoria256.vim'
-Bundle 'Blackrush/vim-gocode'
+Bundle 'fatih/vim-go'
 Bundle 'rust-lang/rust.vim'
 
 " Snipmate + deps
