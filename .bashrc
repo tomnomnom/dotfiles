@@ -11,7 +11,6 @@ alias phpunit='phpunit --colors'
 alias vimpress="VIMENV=talk vim"
 alias c="composer"
 alias v="vagrant"
-alias node="nodejs"
 alias d="sudo docker"
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
@@ -163,11 +162,11 @@ if [ -f ~/.localrc ]; then
   source ~/.localrc
 fi
 
-export PATH=${PATH}:/home/tom/bin
+export PATH=/opt/node/bin:${PATH}:~/bin
 
 # Go
 export PATH=${PATH}:/usr/local/go/bin
-export GOPATH=/home/tom/
+export GOPATH=~/
 
 # Ahhh! Aahhh! AHHHHHHYYAAAHHHHHHH!
 function ssj {
