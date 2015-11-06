@@ -15,12 +15,9 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'TomNomNom/xoria256.vim'
 Bundle 'fatih/vim-go'
 Bundle 'rust-lang/rust.vim'
+Bundle 'SirVer/ultisnips'
 
-" Snipmate + deps
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
+let g:UltiSnipsExpandTrigger="<tab>"
 
 " Required for vundle
 "filetype plugin indent on 
@@ -70,9 +67,9 @@ set hidden
 set backspace=eol,start,indent
 
 " Indentation
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
 set shiftround
 set expandtab
 

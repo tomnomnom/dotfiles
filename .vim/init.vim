@@ -1,0 +1,1 @@
+/home/tom/etc/.vimrc

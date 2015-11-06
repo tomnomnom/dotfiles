@@ -1,0 +1,58 @@
+global !p
+
+def firstWord(raw):
+	words = raw.strip().split(' ')
+	return words[0]
+
+def propList(raw):
+	if raw.strip() == '':
+		return ''
+	params = raw.split(',')
+
+	r = ''
+
+	for param in params:
+		r += "	protected " + firstWord(param) + ";\n"
+
+	return r
+
+def constuctorBody(raw):
+	if raw.strip() == '':
+		return ''
+
+	params = raw.split(',')
+	r = ''
+
+	for param in params:
+		r += "		$this->"+ firstWord(param).strip('$ ') +" = "+ firstWord(param) +";\n"
+
+	return r.strip()
+
+endglobal
+
+snippet class
+class $1 {
+`!p snip.rv = propList(t[2])`
+	public function __construct($2){
+		`!p snip.rv = constuctorBody(t[2])`
+	}
+
+	$0
+}
+endsnippet
+
+snippet get
+public function get$1(){
+	return $this->`!p snip.rv = t[1].lower()`;
+}
+
+$0
+endsnippet
+
+snippet set
+public function set$1($`!p snip.rv = t[1].lower()`){
+	$this->`!p snip.rv = t[1].lower()` = $`!p snip.rv = t[1].lower()`;
+}
+
+$0
+endsnippet
