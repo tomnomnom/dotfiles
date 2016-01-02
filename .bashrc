@@ -166,7 +166,7 @@ export PATH=/opt/node/bin:${PATH}:~/bin
 
 # Go
 export PATH=${PATH}:/usr/local/go/bin
-export GOPATH=~/
+export GOPATH=~
 
 # Ahhh! Aahhh! AHHHHHHYYAAAHHHHHHH!
 function ssj {
