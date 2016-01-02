@@ -1,10 +1,12 @@
 nmap <Leader>; :!go build && ./$(basename $(pwd))<CR>
-nmap <Leader>b :!go test -bench=.<CR>
-nmap <Leader>t :!go test<CR>
 nmap <Leader>f mp:%!gofmt<CR>`pzz
 nmap <Leader>i mp:%!goimports<CR>`pzz
+nmap <Leader>b <Plug>(go-build)
+nmap <Leader>t <Plug>(go-test)
 nmap <Leader>d <Plug>(go-def-tab)
 nmap <Leader>h <Plug>(go-doc)
+nmap <C-n> :lne<CR>
+nmap <C-p> :lp<CR>
 
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
