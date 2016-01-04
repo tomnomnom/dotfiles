@@ -35,6 +35,7 @@ linkDotfile .goomwwmrc
 linkDotfile .inputrc
 linkDotfile .xinitrc
 
-# Update for vundle
-git submodule init
-git submodule update
+mkdir -p $dotfilesDir/.vim/bundle
+cd $dotfilesDir/.vim/bundle
+git clone git://github.com/VundleVim/Vundle.vim.git
+vim +PluginInstall +qall

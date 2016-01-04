@@ -81,7 +81,11 @@ set mouse=
 
 " Colorscheme
 if &t_Co == 256
-  color xoria256
+    try
+        color xoria256
+    catch /^Vim\%((\a\+)\)\=:E185/
+        " Oh well
+    endtry
 endif
 
 " Switch tabs
