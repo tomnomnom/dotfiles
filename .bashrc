@@ -12,6 +12,7 @@ alias vimpress="VIMENV=talk vim"
 alias c="composer"
 alias v="vagrant"
 alias d="sudo docker"
+alias biggest="du -h --max-depth=1 | sort -h"
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
