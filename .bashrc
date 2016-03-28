@@ -1,23 +1,66 @@
+# History control
 HISTCONTROL=ignoredups:ignorespace
 HISTSIZE=1000
 HISTFILESIZE=2000
-
-# append to the history file, don't overwrite it
 shopt -s histappend
 
-alias grep='grep --color=auto'
-alias gg='git grep -ni'
-alias phpunit='phpunit --colors'
-alias vimpress="VIMENV=talk vim"
-alias c="composer"
-alias v="vagrant"
-alias d="sudo docker"
-
+# Enable completion
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# Stolen from Arch wiki
+# COLOURS! YAAAY!
+export TERM=xterm-256color
+
+# Obviously.
+export EDITOR=/usr/bin/vim
+
+# Personal binaries
+export PATH=${PATH}:~/bin
+
+# I'd quite like for Go to work please.
+export PATH=${PATH}:/usr/local/go/bin
+export GOPATH=~
+
+# Sanity aliases
+alias grep="grep --color=auto"
+alias vimpress="VIMENV=talk vim"
+alias :q="exit"
+
+# Open all modified files in vim tabs
+alias vimod="vim -p \`git status -suall | awk '{print \$2}'\`"
+
+# Open files modified in a git commit in vim tabs; defaults to HEAD. Pop it in your .bashrc
+# Examples: 
+#     virev 49808d5
+#     virev HEAD~3
+function virev {
+    commit=$1
+    if [ -z "${commit}" ]; then
+      commit="HEAD"
+    fi
+    rootdir=$(git rev-parse --show-toplevel)
+    sourceFiles=$(git show --name-only --pretty="format:" ${commit} | grep -v '^$')
+    toOpen=""
+    for file in ${sourceFiles}; do
+      file="${rootdir}/${file}"
+      if [ -e "${file}" ]; then
+        toOpen="${toOpen} ${file}"
+      fi
+    done
+    if [ -z "${toOpen}" ]; then
+      echo "No files were modified in ${commit}"
+      return 1
+    fi
+    vim -p ${toOpen}
+}
+
+# 'Safe' version of __git_ps1 to avoid errors on systems that don't have it
+function gitPrompt {
+  command -v __git_ps1 > /dev/null && __git_ps1 " (%s)"
+}
+
+# Colours have names too. Stolen from Arch wiki
 txtblk='\[\e[0;30m\]' # Black - Regular
 txtred='\[\e[0;31m\]' # Red
 txtgrn='\[\e[0;32m\]' # Green
@@ -52,74 +95,7 @@ bakcyn='\[\e[46m\]'   # Cyan
 bakwht='\[\e[47m\]'   # White
 txtrst='\[\e[0m\]'    # Text Reset
 
-export TERM=xterm-256color
-export EDITOR=/usr/bin/vim
-
-
-# Open all modified files in vim tabs
-alias vimod="vim -p \`git status -suall | awk '{print \$2}'\`"
-
-# Switch to git root dir
-alias gr="cd \$(git rev-parse --show-toplevel)"
-
-# Open files modified in a git commit in vim tabs; defaults to HEAD. Pop it in your .bashrc
-# Examples: 
-#     virev 49808d5
-#     virev HEAD~3
-function virev {
-    commit=$1
-    if [ -z "${commit}" ]; then
-      commit="HEAD"
-    fi
-    rootdir=$(git rev-parse --show-toplevel)
-    sourceFiles=$(git show --name-only --pretty="format:" ${commit} | grep -v '^$')
-    toOpen=""
-    for file in ${sourceFiles}; do
-      file="${rootdir}/${file}"
-      if [ -e "${file}" ]; then
-        toOpen="${toOpen} ${file}"
-      fi
-    done
-    if [ -z "${toOpen}" ]; then
-      echo "No files were modified in ${commit}"
-      return 1
-    fi
-    vim -p ${toOpen}
-}
-
-function gitRepoFlags {
-  branch=$(__git_ps1)
-  if [ -z "${branch}" ]; then
-    return 1
-  fi
-
-  rootDir=$(git rev-parse --show-toplevel)
-
-  untracked=$(git ls-files --other --exclude-standard ${rootDir} | wc | awk '{print $1}' 2> /dev/null)
-  modified=$(git ls-files --modified ${rootDir} | wc | awk '{print $1}' 2> /dev/null)
-  staged=$(git diff --name-only --staged | wc | awk '{print $1}' 2> /dev/null)
-
-  str=""
-
-  if [ "${staged}" != "0" ]; then 
-    str="${str}ˢ"
-  fi
-
-  if [ "${untracked}" != "0" ]; then 
-    str="${str}ᵘ"
-  fi
-
-  if [ "${modified}" != "0" ]; then 
-    str="${str}ᵐ"
-  fi
-
-  echo -n "${str}"
-}
-
-function gitPrompt {
-  command -v __git_ps1 > /dev/null && __git_ps1 " (%s)"
-}
-
+# Prompt colours
 atC="${txtpur}"
 nameC="${txtpur}"
 hostC="${txtpur}"
@@ -133,42 +109,10 @@ if [ "${UID}" -eq "0" ]; then
   nameC="${txtred}" 
 fi
 
-# Blue for gue hosts
-if [ `hostname | cut -b1-3` == "gue" ]; then
-  nameC="${txtblu}"
-  atC="${txtblu}"
-  hostC="${txtblu}"
-fi
-
+# Patent Pending Prompt
 export PS1="${nameC}\u${atC}@${hostC}\h:${pathC}\w${gitC}\$(gitPrompt)${pointerC}▶${normalC} "
 
-# Marks. See: http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
-export MARKPATH=$HOME/.marks
-function j { 
-    cd -P $MARKPATH/$1 2>/dev/null || echo "No such mark: $1"
-}
-function m { 
-    mkdir -p $MARKPATH; ln -s $(pwd) $MARKPATH/$1
-}
-function um { 
-    rm -i $MARKPATH/$1 
-}
-function marks {
-    ls -l $MARKPATH | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
-}
-
-# Local settings
+# Local settings go last
 if [ -f ~/.localrc ]; then 
   source ~/.localrc
 fi
-
-export PATH=/opt/node/bin:${PATH}:~/bin
-
-# Go
-export PATH=${PATH}:/usr/local/go/bin
-export GOPATH=~
-
-# Ahhh! Aahhh! AHHHHHHYYAAAHHHHHHH!
-function ssj {
-  ssh $1 -t "PS1=\"\[\033[1;33m\][\u@\hSSJ1:\w]$ \"; exec bash --norc";
-}
