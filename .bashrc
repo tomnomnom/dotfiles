@@ -4,10 +4,18 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 shopt -s histappend
 
-# Enable completion
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+alias grep='grep --color=auto'
+alias gg='git grep -ni'
+alias phpunit='phpunit --colors'
+alias vimpress="VIMENV=talk vim"
+alias c="composer"
+alias v="vagrant"
+alias d="sudo docker"
+alias biggest="du -h --max-depth=1 | sort -h"
 
 # COLOURS! YAAAY!
 export TERM=xterm-256color
