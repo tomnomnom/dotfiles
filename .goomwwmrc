@@ -22,7 +22,7 @@ launcher dmenu_run -nb "#2C2C2C" -nf "#AAAAAA" -sb "#5C5C5C" -sf "#BBBBBB"
 # Auto-start xscreensaver
 #auto xscreensaver -nosplash
 
-auto xsetroot -solid Grey9
+auto xsetroot -solid Grey8
 
 # Focus mode
 focusmode click
