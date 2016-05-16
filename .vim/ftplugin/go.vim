@@ -5,8 +5,8 @@ nmap <Leader>b <Plug>(go-build)
 nmap <Leader>t <Plug>(go-test)
 nmap <Leader>d <Plug>(go-def-tab)
 nmap <Leader>h <Plug>(go-doc)
-nmap <C-n> :lne<CR>
-nmap <C-p> :lp<CR>
+nmap <C-n> :cn<CR>
+nmap <C-p> :cp<CR>
 
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
