@@ -16,6 +16,7 @@ alias c="composer"
 alias v="vagrant"
 alias d="sudo docker"
 alias biggest="du -h --max-depth=1 | sort -h"
+alias tnn="cd ~/src/github.com/tomnomnom"
 
 # COLOURS! YAAAY!
 export TERM=xterm-256color
