@@ -40,6 +40,10 @@ alias :q="exit"
 alias vimod="vim -p \`git status -suall | awk '{print \$2}'\`"
 
 # Change up a variable number of directories
+# E.g:
+#   cu   -> cd ../
+#   cu 2 -> cd ../../
+#   cu 3 -> cd ../../../
 function cu {
     local count=$1
     if [ -z "${count}" ]; then
