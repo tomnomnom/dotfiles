@@ -1,7 +1,7 @@
 # History control
 HISTCONTROL=ignoredups:ignorespace
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=100000
+HISTFILESIZE=2000000
 shopt -s histappend
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
