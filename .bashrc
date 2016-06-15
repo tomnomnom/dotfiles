@@ -17,6 +17,7 @@ alias v="vagrant"
 alias d="sudo docker"
 alias biggest="du -h --max-depth=1 | sort -h"
 alias tnn="cd ~/src/github.com/tomnomnom"
+alias :q="exit"
 
 # COLOURS! YAAAY!
 export TERM=xterm-256color
@@ -31,13 +32,6 @@ export PATH=${PATH}:~/bin:~/.local/bin
 export PATH=${PATH}:/usr/local/go/bin
 export GOPATH=~
 
-# Sanity aliases
-alias grep="grep --color=auto"
-alias vimpress="VIMENV=talk vim"
-alias :q="exit"
-
-# Open all modified files in vim tabs
-alias vimod="vim -p \`git status -suall | awk '{print \$2}'\`"
 
 # Change up a variable number of directories
 # E.g:
@@ -54,6 +48,12 @@ function cu {
         path="${path}../"
     done
     cd $path
+}
+
+
+# Open all modified files in vim tabs
+function vimod {
+    vim -p $(git status -suall | awk '{print $2}')
 }
 
 # Open files modified in a git commit in vim tabs; defaults to HEAD. Pop it in your .bashrc
