@@ -39,6 +39,19 @@ alias :q="exit"
 # Open all modified files in vim tabs
 alias vimod="vim -p \`git status -suall | awk '{print \$2}'\`"
 
+# Change up a variable number of directories
+function cu {
+    local count=$1
+    if [ -z "${count}" ]; then
+        count=1
+    fi
+    local path=""
+    for i in $(seq 1 ${count}); do
+        path="${path}../"
+    done
+    cd $path
+}
+
 # Open files modified in a git commit in vim tabs; defaults to HEAD. Pop it in your .bashrc
 # Examples: 
 #     virev 49808d5
