@@ -18,6 +18,8 @@ alias d="sudo docker"
 alias biggest="du -h --max-depth=1 | sort -h"
 alias tnn="cd ~/src/github.com/tomnomnom"
 alias :q="exit"
+alias norg="gron --ungron"
+alias ungron="gron --ungron"
 
 # COLOURS! YAAAY!
 export TERM=xterm-256color
