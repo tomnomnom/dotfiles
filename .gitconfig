@@ -20,7 +20,7 @@
   tm = merge --no-ff --no-commit
   pp = !git pull && git push
   rm-untracked = !rm $(git ls-files --other --exclude-standard)
-  lsblame = !ls -a | grep -v '\\.\\.' | xargs -n1 -I'{}' git log --format='%h (%an%x09%ai) {}' -1 '{}' | column -ts $'\t'
+  lsblame = !ls -A | xargs -n1 -I'{}' git log --format='%h (%an%x09%ai) {}' -1 '{}' | column -ts $'\t'
 [core]
   editor = /usr/bin/vim
   mergeoptions = 
