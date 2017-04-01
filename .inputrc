@@ -5,3 +5,6 @@
 "\e[D": backward-char
 set show-all-if-ambiguous on
 set completion-ignore-case on 
+
+# Hop up directories
+"\C-n":"cd ..\n"
