@@ -1,4 +1,4 @@
-map <Leader>; :!nodejs %<CR>
+map <Leader>; :!node %<CR>
 map <Leader>b :!make jsx<CR>
 
 setlocal shiftwidth=4 
