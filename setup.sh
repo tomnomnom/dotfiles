@@ -34,6 +34,7 @@ linkDotfile .tmux.conf
 linkDotfile .goomwwmrc
 linkDotfile .inputrc
 linkDotfile .xinitrc
+linkDotfile .curlrc
 
 mkdir -p $dotfilesDir/.vim/bundle
 cd $dotfilesDir/.vim/bundle

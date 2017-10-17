@@ -143,6 +143,11 @@ else
   hi NonText ctermbg=none
 endif
 
+if $VIMENV == 'prev'
+  noremap <Space> :n<CR>
+  noremap <Backspace> :N<CR>
+endif
+
 set noesckeys
 
 set nocompatible
