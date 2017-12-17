@@ -1,0 +1,4 @@
+#!/bin/bash
+gnome-screenshot -a
+
+
