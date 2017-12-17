@@ -1,0 +1,2 @@
+#!/bin/bash
+grep -HnriE '(php warning|php error|fatal error|uncaught exception|include_path|undefined index|undefined variable|\?php)' *

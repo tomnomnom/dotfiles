@@ -28,7 +28,7 @@ export TERM=xterm-256color
 export EDITOR=/usr/bin/vim
 
 # Personal binaries
-export PATH=${PATH}:~/bin:~/.local/bin
+export PATH=${PATH}:~/bin:~/.local/bin:~/etc/scripts
 
 # I'd quite like for Go to work please.
 export PATH=${PATH}:/usr/local/go/bin

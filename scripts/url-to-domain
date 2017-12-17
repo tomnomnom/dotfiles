@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Proto
+sed -r 's#https?://##I' |
+
+# Paths
+sed -r 's#/.*##' |
+
+# Wildcards
+sed -r 's#\*\.##' |
+
+# Multiples
+sed -r 's#,#\n#' |
+
+# Casing
+tr '[:upper:]' '[:lower:]'

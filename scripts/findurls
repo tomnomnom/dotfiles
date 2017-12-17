@@ -1,0 +1,2 @@
+#!/bin/bash
+grep -orihE "https?://[^\"\'> ]+"
