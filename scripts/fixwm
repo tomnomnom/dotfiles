@@ -1,0 +1,3 @@
+#!/bin/bash
+xsetroot -solid black
+setxkbmap gb
