@@ -7,10 +7,10 @@ sed -r 's#https?://##I' |
 sed -r 's#/.*##' |
 
 # Wildcards
-sed -r 's#\*\.##' |
+sed -r 's#^\*\.?##' |
 
 # Multiples
-sed -r 's#,#\n#' |
+sed -r 's#,#\n#g' |
 
 # Casing
 tr '[:upper:]' '[:lower:]'

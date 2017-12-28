@@ -10,6 +10,7 @@ searches=(
     "The site you were looking for couldn't be found"
     "The request could not be satisfied"
     "project not found"
+    "Your CNAME settings"
 )
 
 for str in "${searches[@]}"; do
