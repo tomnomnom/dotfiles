@@ -1,0 +1,10 @@
+#!/bin/bash
+
+while read domain; do
+    for cname in $(host -t CNAME $domain | grep 'is an alias for' | awk '{print $NF}'); do
+        if ! host "$cname" &> /dev/null; then
+            echo "$cname does not resolve (from $domain)"
+        fi
+    done
+done 
+

@@ -17,11 +17,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'TomNomNom/xoria256.vim'
 Plugin 'fatih/vim-go'
 Plugin 'rust-lang/rust.vim'
-Plugin 'SirVer/ultisnips'
 
 call vundle#end()
 
-let g:UltiSnipsExpandTrigger="<tab>"
 
 " Required for vundle
 "filetype plugin indent on 

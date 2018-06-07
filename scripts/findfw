@@ -1,0 +1,2 @@
+#!/bin/bash
+grep -HnriE '(django|laravel|symfony|graphite|grafana|drupal|struts|code ?igniter|cake ?php|grails|elastic ?search|kibana|log ?stash|apache tomcat|jenkins|hudson)'

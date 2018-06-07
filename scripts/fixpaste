@@ -1,0 +1,2 @@
+#!/bin/bash
+printf "\e[?2004l"

@@ -31,3 +31,5 @@
   main-window-geometry = 1269x839+117+89
 [include]
   path = .gitlocal
+[url "ssh://git@heroku.com/"]
+	insteadOf = https://git.heroku.com/
