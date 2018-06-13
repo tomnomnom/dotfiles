@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Dirty dirty dirty
-VERSION="1.10"
+VERSION="1.10.3"
 
 source .bashrc
 wget https://storage.googleapis.com/golang/go$VERSION.linux-amd64.tar.gz
