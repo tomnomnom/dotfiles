@@ -16,14 +16,17 @@ searches=(
     # from https://github.com/EdOverflow/can-i-take-over-xyz/
     "The specified bucket does not exist"
     "Repository not found"
-#    "404 Not Found"
     "Bad Request: ERROR: The request could not be satisfied"
+    "Sorry, We Couldn't Find That Page"
     "Fastly error: unknown domain:"
+    "The feed has not been found."
     "The thing you were looking for is no longer here, or never was"
+    "Please renew your subscription"
     "There isn't a Github Pages site here."
     "We could not find what you're looking for."
     "No settings were found for this company:"
     "No such app"
+    "is not a registered InCloud YouTrack"
     "Unrecognized domain"
     "Sorry, this shop is currently unavailable."
     "You are being redirected"
@@ -31,6 +34,7 @@ searches=(
     "The requested URL was not found on this server."
     "This UserVoice subdomain is currently available!"
     "Do you want to register"
+    "Help Center Closed"
 )
 
 for str in "${searches[@]}"; do
