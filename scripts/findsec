@@ -1,2 +1,0 @@
-#!/bin/bash
-grep -HnriE '(aws_access|aws_secret|api[_-]?key|ListBucketResult)'

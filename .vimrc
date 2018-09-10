@@ -121,10 +121,7 @@ set wildmenu
 command! W w
 
 " folding
-set foldlevelstart=10
-set foldnestmax=10
-nnoremap <space> za
-set foldmethod=indent
+set nofoldenable
 
 " Open word under cursor as ctag in new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
