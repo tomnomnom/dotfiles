@@ -1,6 +1,6 @@
 {
     "flags": "-HnroE",
-    "pattern": "(eyj|YTo|Tzo|PD[89])[%a-zA-Z0-9+/]+={0,2}"
+    "pattern": "[^A-Za-z0-9+/](eyj|YTo|Tzo|PD[89])[%a-zA-Z0-9+/]+={0,2}"
 }
 
 
