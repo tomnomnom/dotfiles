@@ -141,6 +141,7 @@ endif
 if $VIMENV == 'prev'
   noremap <Space> :n<CR>
   noremap <Backspace> :N<CR>
+  set noswapfile
 endif
 
 set noesckeys

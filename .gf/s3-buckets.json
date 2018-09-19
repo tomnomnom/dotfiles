@@ -1,0 +1,7 @@
+{
+    "flags": "-hrioE",
+    "patterns": [
+        "[a-z0-9.-]+\\.s3\\.amazonaws\\.com",
+        "[a-z0-9.-]+\\.s3-website[.-](eu|ap|us|ca|sa|cn)"
+    ]
+}

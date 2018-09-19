@@ -1,0 +1,3 @@
+#!/bin/bash
+node /home/tom/src/github.com/tomnomnom/hacks/jsstrings/index.js $@
+
