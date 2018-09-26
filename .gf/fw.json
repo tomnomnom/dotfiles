@@ -20,6 +20,7 @@
         "com.atlassian.jira",
         "Apache Subversion",
         "Chef Server",
-        "RabbitMQ Management"
+        "RabbitMQ Management",
+        "Mongo"
     ]
 }
