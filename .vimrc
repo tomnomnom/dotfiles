@@ -113,6 +113,12 @@ inoremap <silent> <Down> <Esc>gja
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
+" Base64 decode word under cursor
+nmap <Leader>b :!echo <C-R><C-W> \| base64 -d<CR>
+
+" grep recursively for word under cursor
+nmap <Leader>g :tabnew\|read !grep -Hnr '<C-R><C-W>'<CR>
+
 " Visual prompt for command completion
 set wildmenu
 
