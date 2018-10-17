@@ -21,6 +21,9 @@
         "Apache Subversion",
         "Chef Server",
         "RabbitMQ Management",
-        "Mongo"
+        "Mongo",
+        "Travis CI - Enterprise",
+        "BMC Remedy",
+        "artifactory"
     ]
 }
