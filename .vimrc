@@ -153,3 +153,6 @@ endif
 set noesckeys
 
 set nocompatible
+
+" set the interactive flag so bash functions are sourced from ~/.bashrc etc
+"set shellcmdflag=-ci

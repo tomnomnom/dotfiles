@@ -138,7 +138,7 @@ if [ "${UID}" -eq "0" ]; then
 fi
 
 # Patent Pending Prompt
-export PS1="${nameC}\u${atC}@${hostC}\h:${pathC}\w${gitC}\$(gitPrompt)${pointerC}▶${normalC} "
+export PS1="${nameC}\u${atC}@${hostC}\h:${pathC}\w${gitC}\$(gitPrompt)${pointerC}>${normalC} "
 
 # Local settings go last
 if [ -f ~/.localrc ]; then 
