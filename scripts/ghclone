@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+
+
+repo=$1
+if [ -z "$repo" ]; then
+    echo "usage: ghclone <cloneurl>"
+    exit 1
+fi
+
+repoPath="$(echo $repo | sed -r 's/(https?:\/\/|git@)([a-z0-9-]+\.[a-z0-9]+)[:\/]([^\/]+).*/\2\/\3/')"
+
+if [ -z "$repoPath" ]; then
+    echo "bad repo path: $repoPath"
+    exit 2
+fi
+
+echo $repoPath
+
+mkdir -p "$repoPath"
+cd "$repoPath"
+git clone "$repo"
+
+
+
