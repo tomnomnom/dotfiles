@@ -1,0 +1,2 @@
+#!/bin/bash
+find . -type d -name ".git" | xargs dirname | xargs -n1 -P5 -I{} sh -c "cd {}; git-dump"
