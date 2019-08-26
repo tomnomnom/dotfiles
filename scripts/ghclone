@@ -7,7 +7,7 @@ if [ -z "$repo" ]; then
     exit 1
 fi
 
-repoPath="$(echo $repo | sed -r 's/(https?:\/\/|git@)([a-z0-9-]+\.[a-z0-9]+)[:\/]([^\/]+).*/\2\/\3/')"
+repoPath="$(echo $repo | sed -r 's/(https?:\/\/|git@)([a-z0-9\.-]+\.[a-z0-9]+)[:\/]([^\/]+).*/\2\/\3/')"
 
 if [ -z "$repoPath" ]; then
     echo "bad repo path: $repoPath"
