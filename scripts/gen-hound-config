@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+
+prefix=$(pwd)
+
+echo '{'
+echo '    "max-concurrent-indexers" : 8,'
+echo '    "dbpath" : "data",'
+echo '    "health-check-uri" : "/healthz",'
+echo '    "repos" : {'
+
+
+find . -name ".git" -type d -exec dirname {} \; | sed -r 's#^\./##' |
+    while read repo; do
+        echo "        \"$repo\": {\"url\": \"file://$prefix/$repo\"},"
+    done
+
+echo '        "_dummy": {}'
+echo '    }'
+echo '}'
+
