@@ -1,15 +1,14 @@
 #!/bin/bash
 
-# Dirty dirty dirty
-VERSION="1.12.7"
+LATEST=$(curl https://golang.org/VERSION\?m\=text)
 
 source .bashrc
-wget https://storage.googleapis.com/golang/go$VERSION.linux-amd64.tar.gz
-tar xvfz go$VERSION.linux-amd64.tar.gz
+wget https://storage.googleapis.com/golang/$LATEST.linux-amd64.tar.gz
+tar xvfz $LATEST.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go
 sudo mv go /usr/local/
 
 go get golang.org/x/tools/cmd/goimports
 go get github.com/nsf/gocode
 
-rm go$VERSION.linux-amd64.tar.gz
+rm $LATEST.linux-amd64.tar.gz
