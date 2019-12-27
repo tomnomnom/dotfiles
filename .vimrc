@@ -119,6 +119,9 @@ nmap <Leader>b :!echo <C-R><C-W> \| base64 -d<CR>
 " grep recursively for word under cursor
 nmap <Leader>g :tabnew\|read !grep -Hnr '<C-R><C-W>'<CR>
 
+" sort the buffer removing duplicates
+nmap <Leader>s :%!sort -u --version-sort<CR>
+
 " Visual prompt for command completion
 set wildmenu
 

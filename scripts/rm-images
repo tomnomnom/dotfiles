@@ -1,0 +1,2 @@
+#!/bin/bash
+find . -type f | grep -iE '\.(jpg|jpeg|png|gif|woff|eof)$' | xargs -I{} rm "{}"

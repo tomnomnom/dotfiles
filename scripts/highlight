@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if ! which xtermcolor > /dev/null; then
+    echo "xtermcolor not installed."
+    echo "install it with go get github.com/tomnomnom/xtermcolor/cmd/xtermcolor"
+    exit 1
+fi
+
+color=$(xtermcolor $2)
+
+GREP_COLOR="38;5;$color" egrep --color=always "$1|"
