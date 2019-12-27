@@ -20,6 +20,8 @@ alias tnn="cd ~/src/github.com/tomnomnom"
 alias :q="exit"
 alias norg="gron --ungron"
 alias ungron="gron --ungron"
+alias j="jobs"
+alias follow="tail -f -n +1"
 
 # COLOURS! YAAAY!
 export TERM=xterm-256color
