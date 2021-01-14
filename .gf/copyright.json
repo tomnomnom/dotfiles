@@ -1,0 +1,4 @@
+{
+    "flags": "-hriE",
+    "pattern": "(copyright|\u0026copy;|\\(c\\)|©) *[12][0-9]{3}"
+}

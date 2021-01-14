@@ -128,6 +128,7 @@ set wildmenu
 " Write current file with sudo perms
 "command! W w !sudo tee % > /dev/null
 command! W w
+command! -bang Qall qall
 
 " folding
 set nofoldenable
@@ -150,6 +151,7 @@ endif
 if $VIMENV == 'prev'
   noremap <Space> :n<CR>
   noremap <Backspace> :N<CR>
+  noremap <C-D> :call delete(expand('%')) <bar> argdelete % <bar> bdelete<CR>
   set noswapfile
 endif
 

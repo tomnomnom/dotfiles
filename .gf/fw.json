@@ -1,5 +1,5 @@
 {
-    "flags": "-HnriE",
+    "flags": "-hriE",
     "patterns": [
         "django",
         "laravel",
