@@ -9,7 +9,7 @@ tar xvfz go$VERSION.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go
 sudo mv go /usr/local/
 
-go get golang.org/x/tools/cmd/goimports
-go get github.com/nsf/gocode
+go install golang.org/x/tools/cmd/goimports@latest
+go install github.com/nsf/gocode@latest
 
 rm go$VERSION.linux-amd64.tar.gz
