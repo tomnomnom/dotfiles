@@ -39,5 +39,5 @@ linkDotfile .gf
 
 mkdir -p $dotfilesDir/.vim/bundle
 cd $dotfilesDir/.vim/bundle
-git clone git://github.com/VundleVim/Vundle.vim.git
+git clone https://github.com/VundleVim/Vundle.vim.git
 vim +PluginInstall +qall
