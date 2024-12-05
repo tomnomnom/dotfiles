@@ -1,8 +1,7 @@
 # "prefix history" search
 "\e[A": history-search-backward
 "\e[B": history-search-forward
-#"\e[C": forward-char
-#"\e[D": backward-char
+
 set show-all-if-ambiguous on
 set completion-ignore-case on 
 
