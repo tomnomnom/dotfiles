@@ -8,21 +8,13 @@ call vundle#begin()
 " Bundles
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'sjl/gundo.vim'
-Plugin 'godlygeek/tabular'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree'
 Plugin 'TomNomNom/xoria256.vim'
 Plugin 'fatih/vim-go'
-Plugin 'rust-lang/rust.vim'
 
 call vundle#end()
 
-
-" Required for vundle
-"filetype plugin indent on 
 filetype plugin on 
 
 " Highlighting
@@ -92,15 +84,6 @@ map 8 <Esc>:tabe
 map 9 gT
 map 0 gt
 
-" Gundo toggle
-map <F5> <Esc>:GundoToggle<CR>
-
-" Toggle line-wrap
-map <F6> <Esc>:set wrap!<CR>
-
-" Open file under cursor in new tab
-map <F9> <Esc><C-W>gF<CR>:tabm<CR>
-
 " Direction keys for wrapped lines
 nnoremap <silent> k gk
 nnoremap <silent> j gj
@@ -125,29 +108,14 @@ nmap <Leader>s :%!sort -u --version-sort<CR>
 " Visual prompt for command completion
 set wildmenu
 
-" Write current file with sudo perms
-"command! W w !sudo tee % > /dev/null
+" I type these wrong often
 command! W w
 command! -bang Qall qall
 
 " folding
 set nofoldenable
 
-" Open word under cursor as ctag in new tab
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-
-if $VIMENV == 'talk'
-  set background=light
-  let g:solarized_termcolors=256
-  colo solarized
-  noremap <Space> :n<CR>
-  noremap <Backspace> :N<CR>
-else
-  " Trans background
-  hi Normal ctermbg=none
-  hi NonText ctermbg=none
-endif
-
+" a mode for quickly looking at lots of files
 if $VIMENV == 'prev'
   noremap <Space> :n<CR>
   noremap <Backspace> :N<CR>
@@ -159,5 +127,3 @@ set noesckeys
 
 set nocompatible
 
-" set the interactive flag so bash functions are sourced from ~/.bashrc etc
-"set shellcmdflag=-ci

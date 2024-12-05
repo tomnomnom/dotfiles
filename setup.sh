@@ -27,13 +27,9 @@ function linkDotfile {
 
 linkDotfile .vim
 linkDotfile .vimrc
-linkDotfile .ackrc
 linkDotfile .bashrc
 linkDotfile .gitconfig
-linkDotfile .tmux.conf
-linkDotfile .goomwwmrc
 linkDotfile .inputrc
-linkDotfile .xinitrc
 linkDotfile .curlrc
 linkDotfile .gf
 
