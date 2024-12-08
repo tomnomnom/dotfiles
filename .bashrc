@@ -56,6 +56,7 @@ function virev {
     vim -p ${toOpen}
 }
 
+source ~/etc/git-prompt.sh
 # 'Safe' version of __git_ps1 to avoid errors on systems that don't have it
 function gitPrompt {
   command -v __git_ps1 > /dev/null && __git_ps1 " (%s)"
